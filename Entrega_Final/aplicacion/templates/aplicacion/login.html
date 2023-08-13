@@ -1,0 +1,43 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block title %}
+LOGIN
+{% endblock title %}
+
+{% block subtitle %}
+Ingresa aquí
+{% endblock subtitle %}
+
+{% block 1 %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+       LOGIN
+    </title>
+</head>
+<body>
+    <h2> 
+        LOGIN
+        
+    </h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_p}}
+        </table>
+        <button type="submit"> Iniciar Sesión </button>
+    </form>
+    <h4> 
+        {% if mensaje %}
+            {{mensaje}}
+        {% endif %}
+    </h4>
+</body>
+</html>
+
+{% endblock 1 %}

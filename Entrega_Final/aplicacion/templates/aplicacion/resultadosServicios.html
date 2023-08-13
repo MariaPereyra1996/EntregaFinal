@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de búsqueda</title>
+</head>
+<body>
+    {% if encargado.first == None %}
+        El servicio no existe    
+    
+    {% else %}
+        El servicio {{encargado.first}}
+    {% endif %}
+
+</body>
+</html>

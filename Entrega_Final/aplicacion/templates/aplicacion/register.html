@@ -1,0 +1,38 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+ 
+ 
+{% block title %}
+Registro
+{% endblock title %}
+
+{% block subtitle %}
+Para registrarte completá abajo
+{% endblock subtitle %}
+
+{% block 1 %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    {% if mensaje %}
+        {{mensaje}}
+    {% endif %}
+    <h2>Registro</h2>
+    <form action="" method="post">
+    {% csrf_token %}
+        <table>
+             {{ form.as_table}}
+        </table>
+        <input type="submit" value="Enviar">    
+    </form>
+   
+</body>
+
+</html>
+{% endblock 1 %}

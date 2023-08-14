@@ -1,0 +1,46 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+ 
+ 
+{% block title %}
+Oficinas
+{% endblock title %}
+
+{% block subtitle %}
+Oficinas 
+{% endblock subtitle %}
+
+{% block 1 %}
+<a 
+href="{% url 'createOficinas' %}"
+class="btn btn-primary btn-sm"
+><i class="fa fa-plus fa-lg" title="New Record"> </i>
+</a>
+{% for oficina in oficinas %}
+<div class="row text-center">
+    <div class="col-md-12">
+        <!-- Portfolio item 1-->
+        <div class="portfolio-item">            
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                </div>            
+            
+            <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">{{oficina.nombre}}</div>
+                <div class="portfolio-caption-subheading text-muted">{{oficina.direccion}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+    <a 
+    href="{% url 'updateOficinas' oficina.id %}"
+    class="btn btn primary"
+    ><i class="fa fa-edit fa-sm" title="Edit Record"> </i>
+    </a>
+    <a 
+    href="{% url 'deleteOficinas' oficina.id %}"
+    class="btn btn primary"
+    ><i class="fa fa-trash fa-sm" title="Delete Record"> </i>
+    </a>
+    {% endfor oficina in oficinas %}
+    {% endblock 1 %}
